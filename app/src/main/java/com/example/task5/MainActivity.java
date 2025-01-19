@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     TextView text;
-    int numberOfClick;
+    int numberOfClick=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
     public void changeText(View view) {
         numberOfClick++;
         text.setText(" This is a click number: " +  numberOfClick);
+        if (numberOfClick==6)
+        {
+            text.setText("Enough to click. Go to new start!\n");
+            numberOfClick=0;
+        }
 
     }
 }
